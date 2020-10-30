@@ -10,3 +10,5 @@ https://www.celestrak.com/NORAD/elements/
 Per aggiornare gpredict "da file TLE locale" selezionare la cartella ~/.config/Gpredict/logs/
 
 I file aggiornati sono scaricabili ad ogni esecuzione di clstrak2gpredict.sh
+
+I files .php vengono automaticamente convertiti in .txt
