@@ -13,7 +13,8 @@ I file aggiornati sono scaricabili ad ogni esecuzione di clstrak2gpredict.sh
 
 I files .php vengono automaticamente convertiti in .txt
 
-Elenco link presenti sul file celestrak.log:
+
+# Elenco link presenti sul file celestrak.log:
 
 https://www.celestrak.com/NORAD/elements/tle-new.txt
 
