@@ -86,8 +86,11 @@ do
 		echo "NICKNAME="$nome >> $home/$filename/$numero.sat
 		echo "TLE1="$prima >> $home/$filename/$numero.sat
 		echo "TLE2="$seconda >> $home/$filename/$numero.sat
+		echo "STATUS=0" >> $home/$filename/$numero.sat
 		#echo "" >> $home/$numero.sat
 		cont=$(($cont+1))
+		
+
 		if [[ $modo == "1" ]]; then
 			cp -fR $home/$filename/$numero.sat $HOME/.config/Gpredict/pippo/
 			#statements
