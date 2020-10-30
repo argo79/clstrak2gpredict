@@ -17,8 +17,25 @@ fi
 
 home="$HOME/.config/Gpredict/news"
 
-rm -R $HOME/.config/Gpredict/logs/*.*
-wget -P $HOME/.config/Gpredict/logs/ -i celestrak.log
+echo "Vuoi aggiornare i files di celestrak? (S/Y/s/y/N/n)"
+read -r VAR1
+#echo $VAR1
+
+if [[ $VAR1 == "Y" ]] || [[ $VAR1 == "S" ]] || [[ $VAR1 == "y" ]] || [[ $VAR1 == "s" ]]
+then
+	rm -R $HOME/.config/Gpredict/logs/*.*
+	wget -P $HOME/.config/Gpredict/logs/ -i celestrak.log
+
+fi
+
+echo "Vuoi copiare tutto nella cartella satdata? (S/Y/s/y/N/n)"
+read -r VAR2
+
+if [ $VAR2 = "Y" ] || [ $VAR2 = "S" ] || [ $VAR2 = "y" ] || [ $VAR2 = "s" ]
+then
+	modo=1
+else modo=0
+fi
 
 for file in $HOME/.config/Gpredict/logs/*.*
 do 
@@ -71,12 +88,15 @@ do
 		echo "TLE2="$seconda >> $home/$filename/$numero.sat
 		#echo "" >> $home/$numero.sat
 		cont=$(($cont+1))
-		
+		if [[ $modo == "1" ]]; then
+			cp -fR $home/$filename/$numero.sat $HOME/.config/Gpredict/pippo/
+			#statements
+		fi
 	done
 	
 	diff=$(($cont-$old))
 	old=($cont)
-	echo "In tutto ho caricato "$diff" satelliti" $filename"."
+	echo -e "In tutto ho caricato "$diff" satelliti \e[1m\e[93m" $filename"\e[0m."
 
 done
 
