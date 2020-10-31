@@ -23,7 +23,7 @@ read -r VAR1
 
 if [[ $VAR1 == "Y" ]] || [[ $VAR1 == "S" ]] || [[ $VAR1 == "y" ]] || [[ $VAR1 == "s" ]]
 then
-	rm -R $HOME/.config/Gpredict/logs/*.*
+	rm -R $HOME/.config/Gpredict/logs/
 	wget -P $HOME/.config/Gpredict/logs/ -i celestrak.log
 
 fi
